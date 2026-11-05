@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HarshGuruJi Admin Panel - Master Command Center</title>
+  <title>Admin Panel</title>
   <meta name="description"
     content="HarshGuruJi Master Admin Command Center and administrative control portal with gate pass security.">
   <meta name="keywords"
@@ -6889,12 +6889,14 @@
     }
   </script>
   <script type="module">
-    try {
-      const { supabase } = await import('./js/supabase.js');
-      if (supabase) window.supabaseClient = supabase;
-    } catch (e) {
-      console.warn('ES module supabase client notice:', e);
-    }
+    (async () => {
+      try {
+        const { supabase } = await import('./js/supabase.js');
+        if (supabase) window.supabaseClient = supabase;
+      } catch (e) {
+        console.warn('ES module supabase client notice:', e);
+      }
+    })();
   </script>
   <script src="js/admin-bridge.js"></script>
   <script src="js/ncert-master-catalog.js"></script>
